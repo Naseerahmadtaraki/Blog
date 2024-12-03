@@ -1,0 +1,44 @@
+name: CI/CD Pipeline for PHP Project
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Check out the code
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: Set up PHP environment
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v3
+      with:
+        php-version: '8.1'
+        extensions: mbstring, mysqli
+
+    # Step 3: Install dependencies
+    - name: Install dependencies
+      run: composer install
+
+    # Step 4: Run unit tests
+    - name: Run tests
+      run: vendor/bin/phpunit
+
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Deploy the application
+    - name: Deploy to server (example)
+      run: |
+        echo "Deploying application..."
+        # Add your deployment commands here (e.g., SSH, FTP, or Cloud Deployments)
