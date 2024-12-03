@@ -1,0 +1,26 @@
+/* Dashboard Page CSS */
+
+.side {
+    height: 100vh;
+    background-color: #343a40;
+    color: #fff;
+    position: fixed;
+    width: 250px;
+    top: 0;
+    left: 0;
+}
+.side .nav-link {
+    color: #adb5bd;
+}
+.side .nav-link.active {
+    color: #fff;
+    background-color: #495057;
+}
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+.card-icon {
+    font-size: 2rem;
+    color: #6c757d;
+}
