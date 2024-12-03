@@ -1,0 +1,15 @@
+{
+    "name": "nasee/project",
+    "autoload": {
+        "psr-4": {
+            "Nasee\\Project\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Naseer Ahmad PC",
+            "email": "tarakinaseer@gmail.com"
+        }
+    ],
+    "require": {}
+}
