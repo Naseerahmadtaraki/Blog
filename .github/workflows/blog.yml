@@ -26,7 +26,6 @@ jobs:
 
     # Step 3: Install dependencies
     - name: Install dependencies
-      run: composer install
 
     # Step 4: Run unit tests
     - name: Run tests
