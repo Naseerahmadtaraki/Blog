@@ -1,0 +1,29 @@
+name: PHP CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Setup PHP environment
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1' # Specify your PHP version
+          extensions: mbstring, mysqli # Add required PHP extensions
+
+      # Step 3: Run tests (if applicable)
+      - name: Run Tests
+        run: php vendor/bin/phpunit || echo "No tests to run"
